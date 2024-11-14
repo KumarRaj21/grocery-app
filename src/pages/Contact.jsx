@@ -30,8 +30,8 @@ const Contact = () => {
 
   return (
     <div className="w-full mt-10 flex  flex-col gap-5 justify-center items-center">
-      <h2 className='text-sm sm:text-lg font-bold'>Contact Us</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-[50%]">
+      <h2 className='text-md sm:text-lg font-bold'>Contact Us</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-[90%] sm:w-[50%]">
         <input
           type="text"
           name="name"
