@@ -7,6 +7,7 @@ import AddProduct from './pages/AddProduct';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetail from './pages/ProductDetail';
+import EditProduct from './pages/EditProduct';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/add-product" element={<AddProduct />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products/:product_id/edit" element={<EditProduct />} />
           <Route path="/products/:product_id" element={<ProductDetail />} />
         </Routes>
     </div>  

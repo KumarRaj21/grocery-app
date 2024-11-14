@@ -3,12 +3,16 @@ import { useParams } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import CustomButton from '../components/CustomButton'
 import { toast } from 'react-toastify';
-
+import { useNavigate } from 'react-router-dom';
 const ProductDetail = () => {
   const { product_id } = useParams();
   const { getProductById } = useContext(ProductContext);
   const [product, setProduct] = useState(null);
 
+  const nav = useNavigate()
+  const handlenav = () => {
+    nav(`/products/${product_id}/edit`)
+  }
   useEffect(() => {
     const fetchProduct = async () => {
       const productData = await getProductById(product_id);
@@ -39,6 +43,12 @@ const ProductDetail = () => {
             <p className="text-md text-red-500">Discount: {product.discount}%</p>
           )}
           <div className="flex items-center gap-4">
+          <CustomButton
+              textColor="white"
+              bgColor="red-500"
+              buttonText="Edit Details"
+              onClick={handlenav}
+            />
             <CustomButton
               textColor="white"
               bgColor="blue-500"

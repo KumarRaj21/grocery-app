@@ -23,7 +23,8 @@ export const ProductProvider = ({ children }) => {
   };
 
   const updateProduct = (id, updatedProduct) => {
-    setProducts(products.map(product => (product.id === id ? updatedProduct : product)));
+    setProducts(products.map(product => (product.product_id === id ? updatedProduct : product)));
+    toast.success("Product updated successfully")
   };
 
   useEffect(()=>{
